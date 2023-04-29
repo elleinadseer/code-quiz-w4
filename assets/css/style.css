@@ -3,12 +3,19 @@
     --lightpurple: rgb(231, 228, 247);
 }
 
-.quiz-section, .results, .highscores {
-    display:none;
-    text-align: start;
+#description {
+    display: block;
+    text-align: center;
 }
 
-h1 {font-size: 30px;}
+#quiz-section, .results, .highscores {
+    text-align: start;
+    display: none;
+}
+
+h1 {
+    font-size: 30px;
+padding: 30px;}
 
 * {
     font-family: "Roboto Flex", Arial, Helvetica, sans-serif;
