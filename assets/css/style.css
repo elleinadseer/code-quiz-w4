@@ -1,0 +1,31 @@
+:root{
+    --purple: rgb(109, 60, 173);
+
+}
+
+* {
+    font-family: "Roboto Flex", Arial, Helvetica, sans-serif;
+}
+
+.highscores-link p {
+    color: var(--purple);
+float: left;
+padding: 90px;
+/* a:link {color: purple} */
+}
+
+.timer p {
+    color: var(--purple);
+    padding: 90px;
+    float: right;
+}
+
+.description {
+    text-align: center;
+}
+
+.start-button button {
+    background-color: var(--purple);
+    color: white;
+}
+
