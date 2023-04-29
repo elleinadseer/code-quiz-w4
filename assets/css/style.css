@@ -1,13 +1,20 @@
 :root{
     --purple: rgb(109, 60, 173);
-
+    --lightpurple: rgb(231, 228, 247);
 }
+
+.quiz-section, .results, .highscores {
+    display:none;
+    text-align: start;
+}
+
+h1 {font-size: 30px;}
 
 * {
     font-family: "Roboto Flex", Arial, Helvetica, sans-serif;
 }
 
-.highscores-link p {
+.highscores-link a {
     color: var(--purple);
 float: left;
 padding: 90px;
@@ -29,3 +36,6 @@ padding: 90px;
     color: white;
 }
 
+.highscores li {
+    background-color: var(--lightpurple)
+}
