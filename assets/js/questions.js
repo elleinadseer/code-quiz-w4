@@ -7,29 +7,29 @@ var questions = [
     },
     {
       title: 'The condition in an if / else statement is enclosed within ____.',
-      choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
+      choices: ['square brackets', 'curly brackets', 'parentheses', 'quotes'],
       answer: 'parentheses',
     },
     {
       title: 'Arrays in JavaScript can be used to store ____.',
       choices: [
-        'numbers and strings',
         'other arrays',
-        'booleans',
+        'numbers and strings',
         'all of the above',
+        'booleans',
       ],
       answer: 'all of the above',
     },
     {
       title:
         'String values must be enclosed within ____ when being assigned to variables.',
-      choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
+      choices: ['parentheses', 'curly brackets', 'quotes', 'commas'],
       answer: 'quotes',
     },
     {
       title:
         'A very useful tool used during development and debugging for printing content to the debugger is:',
-      choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
+      choices: ['terminal / bash', 'Javascript', 'console.log', 'for loops'],
       answer: 'console.log',
     },
   ];

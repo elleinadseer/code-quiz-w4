@@ -24,11 +24,12 @@
     <div id="top-row">
 <section id="highscores-link">
     <a onclick="viewHS()">View Highscores</a>
+    </section>
 </class>
 
 <section class="timer">
-    <p>Time:</p>
-</class>
+    <p>Time: <span id="timerNum">75</span>
+</sections>
 </div>
 
 <div style="clear: both;"></div><p></p>
@@ -40,7 +41,7 @@
         Keep in mind that incorrect answers will penalise your score/time by ten seconds.</p>
 
         <section class="start-button">
-        <button onclick="quizToggle()" role="button">Start Quiz</button>
+        <button onclick="quizToggle(); startTimer(); showQuiz()" role="button">Start Quiz</button>
         </section>
 </section>
 
@@ -49,30 +50,33 @@
 
 <section id="quiz-section"> 
 
-     <section class="question-titles">
-        <h2>Question #:</h2>
-     </section>
+     <p id="question-title">
+        Commonly used data types DO NOT include:
+     </p>
 
-     <section class="question-choices">
+     <p class="options">
         <ul>
-            <li>Choice 1</li>
-            <li>Choice 2</li>
-            <li>Choice 3</li>
-            <li>Choice 4</li>
+            <li id="ql1" onclick="optionSelect(); wrongMessage()">Strings</li>
+            <li id="ql2" onclick="optionSelect(); wrongMessage()">Booleans</li>
+            <li id="ql3" onclick="optionSelect(); correctMessage()">Alerts</li>
+            <li id="ql4" onclick="optionSelect(); wrongMessage()">Numbers</li>
         </ul>
-     </section>
 
-     <section class="wrong-correct">
-        Wrong / Correct
-     </section>
+     <p id="wrongAnswer">
+        Wrong! 
+     </p>
+
+     <p id="correctAnswer">
+        Correct! 
+     </p>
 
 </section><!-- End of quiz-section -->
 
 
-<section class="results"> 
+<section id="results"> 
 <h1>All done!</h1>
 
-<p>Your final score is: </p>
+<p>Your final score is: <span id="resultNum"></span></p>
 
 Enter initials: 
 <form><input type="text" id="initials"><input type="submit"></form>

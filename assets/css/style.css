@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-#quiz-section, .results, #highscores {
+#quiz-section, #results, #highscores, #correctAnswer, #wrongAnswer {
     text-align: start;
     display: none;
 }
