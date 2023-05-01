@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-#quiz-section, .results, .highscores {
+#quiz-section, .results, #highscores {
     text-align: start;
     display: none;
 }
@@ -21,10 +21,12 @@ padding: 30px;}
     font-family: "Roboto Flex", Arial, Helvetica, sans-serif;
 }
 
-.highscores-link a {
-    color: var(--purple);
+#highscores-link a {
+    color: var(--purple)!important;
+    text-decoration: underline!important;
+    cursor: pointer;
 float: left;
-padding: 90px;
+margin: 90px;
 /* a:link {color: purple} */
 }
 

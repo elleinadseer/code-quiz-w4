@@ -22,8 +22,8 @@
 <body>
     
     <div id="top-row">
-<section class="highscores-link">
-    <a href>View Highscores</a>
+<section id="highscores-link">
+    <a onclick="viewHS()">View Highscores</a>
 </class>
 
 <section class="timer">
@@ -79,14 +79,14 @@ Enter initials:
 </section>
 
 
-<section class="highscores"> 
+<section id="highscores"> 
     <h1>Highscores</h1>
 
     <ul>
         <li>1. INITIAL - SCORE</li>
     </ul>
 
-    <button type="button">Go Back</button>
+    <button type="submit" onClick="refreshPage()">Go Back</button>
     <button type="button">Clear Highscores</button>
 </section>
 
