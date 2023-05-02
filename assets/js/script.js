@@ -1,7 +1,7 @@
 var quizSec = document.getElementById("quiz-section");
 var description = document.getElementById("description");
 var highscores= document.getElementById("highscores");
-var hslink= document.getElementById("highscores-link");
+var hsLink= document.getElementById("highscores-link");
 
 var results= document.getElementById("results");
 var resultsNum = document.getElementById("resultsNum");
@@ -17,6 +17,10 @@ var answer = document.getElementById("answer");
 var correctAnswer = document.getElementById("correctAnswer");
 var wrongAnswer = document.getElementById("wrongAnswer");
 
+var hsSheet = document.getElementById("highscore-sheet");
+
+var clearHS = document.getElementById("clear-highscores");
+
 var timerNum = document.getElementById("timerNum");
 var secondsLeft = 0;
 var score = 0;
@@ -31,13 +35,13 @@ function refreshPage(){
 function quizToggle() {
       quizSec.style.display = "block";
       description.style.display = "none";
-        hslink.style.display = "none";
+        hsLink.style.display = "none";
       }
 
   function viewHS() {
         highscores.style.display = "block";
         description.style.display = "none";
-        hslink.style.display = "none";
+        hsLink.style.display = "none";
   }
 
   // The timer
@@ -57,6 +61,7 @@ function quizToggle() {
     }, 1000);
   }
 
+  // When timer reaches 0 then show final result
   function finalResult() {
     clearInterval(countdownTimer);
 
@@ -68,6 +73,7 @@ function quizToggle() {
     resultsNum.textContent = score;
   }
 
+  // Replaces template questions with new answers
     function optionSelect() {
         qNum++;
 
@@ -86,19 +92,72 @@ function quizToggle() {
         qTitle.textContent = questions[qNum].title
     };
 
-
+// Displays "correct" message and increases score
      function correctMessage() {
      correctAnswer.style.display = "block"
     
     if (correctAnswer.style.display = "block")
-    wrongAnswer.style.display = "none"}
+    wrongAnswer.style.display = "none"
+
+    score++;}
+
+// Displays "wrong" message and decreases score
 
      function wrongMessage() {
      wrongAnswer.style.display = "block"
 
      if (wrongAnswer.style.display = "block")
-     correctAnswer.style.display = "none"}
+     correctAnswer.style.display = "none"
+    
+    score--;
+    secondsLeft -= 10; }
 
+// Saves score by storing it into local storage using JSON
+    function saveScore() {
+        var initials = document.getElementById("initials").value;
+        var score = document.getElementById("score").value;
+        var scoreObj = { initials: initials, score: score };
+        var scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.push(scoreObj);
+        localStorage.setItem("scores", JSON.stringify(scores));
 
-  
-  
+        window.location.reload();
+
+    }
+      
+    // Displays scores using JSON
+      function displayScores() {
+      var scores = JSON.parse(localStorage.getItem("scores")) || [];
+      scores.sort(function(a, b) {
+          return b.score - a.score;
+        });
+
+    var highscore = document.getElementById("highscore-sheet");
+    highscore.innerHTML = " ";
+
+    // For loop for scores
+        for (var i = 0; i < scores.length; i++) {
+          var scoreObj = scores[i];
+
+          // Creates rows and table data containing score and initials 
+
+          var row = document.createElement("tr");
+          var initialsCell = document.createElement("td");
+          initialsCell.textContent = scoreObj.initials;
+          var scoreCell = document.createElement("td");
+
+          scoreCell.textContent = scoreObj.score;
+
+                    // Appends the text onto the rows
+          row.appendChild(document.createTextNode("Initials:")); 
+          row.appendChild(initialsCell);
+          row.appendChild(document.createTextNode(" | Score:   ")); 
+          row.appendChild(scoreCell);
+          highscore.appendChild(row);
+        }
+      }
+
+      // Runs displayScores on load 
+      window.onload = function() {
+        displayScores();
+      };
