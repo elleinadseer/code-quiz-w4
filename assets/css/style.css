@@ -32,6 +32,10 @@ li {
     width: 300px;
 }
 
+li:hover {
+    background-color: plum;
+}
+
 #wrongAnswer, #correctAnswer {
     font-style: italic;
     color: grey;
