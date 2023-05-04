@@ -115,7 +115,6 @@ function quizToggle() {
 // Saves score by storing it into local storage using JSON
     function saveScore() {
         var initials = document.getElementById("initials").value;
-        var score = document.getElementById("score").value;
         var scoreObj = { initials: initials, score: score };
         var scores = JSON.parse(localStorage.getItem("scores")) || [];
         scores.push(scoreObj);
@@ -130,6 +129,7 @@ function quizToggle() {
       var scores = JSON.parse(localStorage.getItem("scores")) || [];
       scores.sort(function(a, b) {
           return b.score - a.score;
+          
         });
 
     var highscore = document.getElementById("highscore-sheet");
@@ -155,9 +155,33 @@ function quizToggle() {
           row.appendChild(scoreCell);
           highscore.appendChild(row);
         }
+
       }
 
       // Runs displayScores on load 
       window.onload = function() {
         displayScores();
       };
+
+      /*
+      function onSelectAnswer(e) {
+    var correctAnswer = questions[currentQuestion].answer;
+
+    var userAnswer = e.target.textContent;
+    if (correctAnswer === userAnswer) {
+        score++;
+
+        document.getElementById("correctsound").play();
+
+        displayMessage('Correct!')
+
+    } else {
+
+        document.getElementById("incorrectsound").play();
+        score--;
+        displayMessage('Wrong :-(')
+    }
+
+    // Call up the next question
+    displayQuestion();
+}*/

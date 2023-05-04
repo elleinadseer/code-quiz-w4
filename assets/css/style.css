@@ -25,11 +25,15 @@ padding: 30px;}
 li {
     background-color: var(--purple);
     color: white;
-    padding: 5px;
+    border: 20px;
     margin: 20px;
     border-radius: 5px;
     cursor: pointer;
     width: 300px;
+}
+
+#ql1, #ql2, #ql3, #ql4 {
+    padding: 10px;
 }
 
 li:hover {

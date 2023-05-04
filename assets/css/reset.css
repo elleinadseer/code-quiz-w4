@@ -22,7 +22,6 @@ time, mark, audio, video {
     border:0;
     outline:0;
     vertical-align:baseline;
-    background:transparent;
 }
 
 body {
@@ -53,7 +52,6 @@ a {
     padding:0;
     font-size:100%;
     vertical-align:baseline;
-    background:transparent;
 }
 
 /* change colours to suit your needs */
